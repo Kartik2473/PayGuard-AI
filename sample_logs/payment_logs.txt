@@ -1,0 +1,7 @@
+2026-11-18 10:00:01 INFO Payment service started
+2026-11-18 10:00:05 INFO Processing payment ID 1001
+2026-11-18 10:00:08 ERROR Payment API timeout
+2026-11-18 10:00:10 ERROR Database connection failed
+2026-11-18 10:00:12 CRITICAL Payment service unavailable
+2026-11-18 10:00:15 WARNING Retry limit approaching
+2026-11-18 10:00:20 INFO Monitoring system active
