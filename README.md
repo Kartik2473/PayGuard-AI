@@ -6,7 +6,7 @@ Python | Streamlit | Google Gemini API | Log Analysis | Incident Management
 
 An AI-assisted application that analyzes payment application logs, identifies potential failures, classifies incident severity, correlates related events, and provides troubleshooting recommendations.
 
-GitHub Repository: https://github.com/Kartik2473/PayGuard-AI
+GitHub Repository: PayGuard AI
 
 ⸻
 
@@ -234,30 +234,30 @@ The project follows a modular directory structure, separating application logic,
 
 PayGuard-AI/
 │
-├── app.py                         # Streamlit application and dashboard
-├── ai_engine.py                   # Google Gemini API integration
-├── incident_analyzer.py           # Incident analysis and recommendations
-├── log_processor.py               # Log parsing and severity classification
-├── correlation_engine.py          # Transaction and event correlation
+├── app.py
+├── ai_engine.py
+├── incident_analyzer.py
+├── log_processor.py
+├── correlation_engine.py
 │
-├── requirements.txt               # Python dependencies
-├── README.md                      # Project documentation
-├── .gitignore                     # Excludes sensitive and unnecessary files
-├── .env.example                   # Environment variable template
+├── requirements.txt
+├── README.md
+├── .gitignore
+├── .env.example
 │
 ├── screenshots/
-│   ├── dashboard.png              # Incident monitoring dashboard
-│   └── welcome.png                # Application welcome dashboard
+│   ├── dashboard.png
+│   └── welcome.png
 │
 ├── sample_logs/
-│   └── payment_logs.txt           # Sample payment application logs
+│   └── payment_logs.txt
 │
 ├── tests/
-│   └── test_incident_analyzer.py  # Automated unit tests
+│   └── test_incident_analyzer.py
 │
 └── PineLabs_Incident_Analyzer/
     └── .streamlit/
-        └── config.toml            # Streamlit configuration
+        └── config.toml
 
 File Responsibilities
 
@@ -273,7 +273,9 @@ tests/	Automated unit tests
 requirements.txt	Python dependencies
 .env.example	Environment configuration template
 .gitignore	Excludes sensitive and unnecessary files
-.streamlit/config.toml	Streamlit configuration
+PineLabs_Incident_Analyzer/.streamlit/config.toml	Streamlit configuration
+
+⸻
 
 🔐 Security
 
