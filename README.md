@@ -1,26 +1,29 @@
 🛡️ PayGuard AI
 
-Intelligent Payment Incident Analyzer
+Intelligent AI-Assisted Application Incident Analyzer
 
-Python | Streamlit | Google Gemini API | Log Analysis | Incident Management
+Python | Streamlit | Google Gemini API | Log Analysis | Incident Management | Troubleshooting
 
-An AI-assisted application that analyzes payment application logs, identifies potential failures, classifies incident severity, correlates related events, and provides troubleshooting recommendations.
+PayGuard AI is an AI-assisted application incident analysis platform designed to help developers, application support engineers, and Technology Operations teams investigate software failures through automated log analysis.
 
-GitHub Repository: PayGuard AI
+The application processes application logs, identifies potential failures, classifies incident severity, correlates related events, identifies possible root causes, and generates troubleshooting recommendations.
 
-⸻
+It combines rule-based analysis with optional Generative AI capabilities to simplify incident investigation and improve operational visibility.
 
-📌 1. Project Overview
+Designed for: Payment Systems | Banking | FinTech | E-commerce | Enterprise Applications | Backend Services | Distributed Systems
+---
 
-PayGuard AI is a Python-based incident analysis application designed to help Technology Operations and application support teams investigate payment application failures using application logs.
+## 📌 1. Project Overview
 
-In distributed payment applications, failures can occur across different services, making it difficult to identify the source of an incident and determine the appropriate troubleshooting steps.
+Modern software applications generate large volumes of logs across different services, databases, APIs, and infrastructure components.
 
-PayGuard AI addresses this problem by combining rule-based log analysis, event correlation, and optional generative AI assistance.
+Identifying the source of an application failure can be challenging, particularly when multiple services are involved.
 
-The application processes payment-related logs and provides structured incident information, including:
+PayGuard AI addresses this challenge by combining rule-based log analysis, event correlation, and optional Generative AI assistance.
 
-* Error and warning detection.
+The application provides structured incident information, including:
+
+* Automated error and warning detection.
 * Incident severity classification.
 * Potential root cause identification.
 * Supporting evidence from original log entries.
@@ -31,48 +34,50 @@ The application processes payment-related logs and provides structured incident 
 * AI-assisted incident investigation.
 * Downloadable JSON and TXT reports.
 
-The application uses a hybrid architecture in which the core rule-based analysis engine operates independently of the external Gemini API.
+The application follows a hybrid architecture in which the core rule-based analysis engine operates independently of the external Gemini API.
 
 Project Information
 
 Field	Details
 Project	PayGuard AI
 Project Type	Software Engineering and AI Integration
-Domain	Payment Technology Operations
+Domain	Application Incident Management
 Development	Individual Project
 Backend	Python
 Frontend	Streamlit
 AI Integration	Google Gemini API
+Analysis	Rule-Based and AI-Assisted
+Reporting	JSON and TXT
 
-⸻
+---
 
-🎯 2. Problem Statement
+## 🎯 2. Problem Statement
 
-Payment applications generate large volumes of logs containing information about transactions, service failures, API errors, database connectivity, authentication problems, and other operational events.
+Software applications frequently encounter operational issues, including API failures, database connectivity problems, authentication errors, service interruptions, and unexpected application exceptions.
 
-Manually investigating these logs can be time-consuming, particularly when multiple errors occur across different services.
+Manually investigating these problems can be time-consuming, particularly when multiple errors occur across different services.
 
-An operations engineer needs to answer:
+Technology Operations engineers need to answer:
 
 1. What went wrong?
-2. Which services were affected?
+2. Which services or components were affected?
 3. How severe is the incident?
 4. What evidence supports the suspected cause?
 5. Which issue should be investigated first?
 6. What troubleshooting steps should be performed?
 7. When should the incident be escalated?
 
-PayGuard AI provides a structured approach to answering these questions through automated log analysis and optional AI-assisted investigation.
+PayGuard AI provides a structured approach to answering these questions through automated log processing, rule-based analysis, event correlation, and optional AI-assisted investigation.
 
-⸻
+---
 
-🚀 3. Key Features
+## 🚀 3. Key Features
 
 3.1 Log Ingestion
 
 * Upload TXT and LOG files.
 * Paste application logs manually.
-* Load sample payment logs.
+* Load sample application logs.
 * Clear existing logs and analysis.
 
 3.2 Automated Log Processing
@@ -103,9 +108,11 @@ Identifies possible failure patterns, including:
 * Database connection failures.
 * Authentication failures.
 * Service unavailability.
-* Payment declines and insufficient funds.
+* Payment declines.
+* Insufficient funds.
+* Application errors.
 
-These are potential causes based on available log evidence, not automatically confirmed root causes.
+These findings represent potential causes based on available log evidence and predefined detection patterns, not automatically confirmed root causes.
 
 3.5 Evidence Traceability
 
@@ -115,8 +122,9 @@ Provides supporting information from original log entries:
 * Log levels.
 * Service names.
 * Original log messages.
+* Relevant failure events.
 
-This helps an engineer verify why a particular failure pattern was identified.
+This helps engineers verify why a particular failure pattern was identified.
 
 3.6 Event Correlation
 
@@ -140,8 +148,9 @@ The AI component can assist with:
 
 * Understanding failure patterns.
 * Reviewing incident context.
-* Suggesting possible causes.
+* Suggesting potential root causes.
 * Recommending additional investigation steps.
+* Generating contextual troubleshooting guidance.
 
 AI-generated findings are displayed separately from rule-based results and require human verification.
 
@@ -160,26 +169,26 @@ The core incident analysis functionality does not depend on Gemini.
 
 If the API is unavailable or not configured, the application can still process logs and generate rule-based findings.
 
-⸻
+---
 
-🛠️ 4. Technology Stack
+## 🛠️ 4. Technology Stack
 
 Technology	Purpose
 Python	Core application logic
 Streamlit	Interactive dashboard
 Google Gemini API	AI-assisted incident analysis
 Google GenAI SDK	Gemini API integration
-Pandas	Data handling and visualization
+Pandas	Data handling and processing
 Regular Expressions	Log parsing and pattern detection
 Python unittest	Automated testing
 python-dotenv	Environment variable management
 Git and GitHub	Version control and project management
 
-⸻
+---
 
-🏗️ 5. System Architecture
+## 🏗️ 5. System Architecture
 
-PayGuard AI follows a modular architecture that separates log processing, incident analysis, correlation, AI integration, and dashboard functionality.
+PayGuard AI follows a modular architecture that separates log processing, incident analysis, event correlation, AI integration, and dashboard functionality.
 
 Processing Workflow
 
@@ -202,13 +211,16 @@ Processing Workflow
                 +-------+-------+
                         |
                         v
+                 Incident Analyzer
+                        |
+                        v
                  Incident Report
                         |
                         v
                 Optional Gemini AI
                         |
                         v
-             Incident Investigation
+             AI-Assisted Investigation
                         |
                         v
                Streamlit Dashboard
@@ -226,13 +238,20 @@ Log Processor	log_processor.py	Log parsing, timestamps, levels and service extra
 Correlation Engine	correlation_engine.py	Transaction correlation, repeated errors and timelines
 Severity Classification	log_processor.py	Rule-based incident severity classification
 
-⸻
+---
 
-📂 6. Project Structure
+## 📂 6. Project Structure
 
-The project follows a modular directory structure, separating application logic, AI integration, log processing, testing, screenshots, and configuration.
+The project follows a modular directory structure, separating application logic, AI integration, log processing, testing, screenshots, configuration, and documentation.
 
+### Directory Structure
+
+```text
 PayGuard-AI/
+│
+├── PineLabs_Incident_Analyzer/
+│   └── .streamlit/
+│       └── config.toml
 │
 ├── app.py
 ├── ai_engine.py
@@ -252,56 +271,60 @@ PayGuard-AI/
 ├── sample_logs/
 │   └── payment_logs.txt
 │
-├── tests/
-│   └── test_incident_analyzer.py
-│
-└── PineLabs_Incident_Analyzer/
-    └── .streamlit/
-        └── config.toml
+└── tests/
+    └── test_incident_analyzer.py
+```
 
-File Responsibilities
+### File Responsibilities
 
-File / Directory	Responsibility
-app.py	Streamlit dashboard and application workflow
-ai_engine.py	Gemini API integration
-incident_analyzer.py	Incident analysis and recommendations
-log_processor.py	Log parsing and severity classification
-correlation_engine.py	Transaction and event correlation
-screenshots/	Application screenshots
-sample_logs/	Sample payment application logs
-tests/	Automated unit tests
-requirements.txt	Python dependencies
-.env.example	Environment configuration template
-.gitignore	Excludes sensitive and unnecessary files
-PineLabs_Incident_Analyzer/.streamlit/config.toml	Streamlit configuration
+| File / Directory | Responsibility |
+|---|---|
+| `app.py` | Main Streamlit dashboard and application workflow |
+| `ai_engine.py` | Google Gemini API integration |
+| `incident_analyzer.py` | Incident analysis, potential causes and troubleshooting recommendations |
+| `log_processor.py` | Log parsing, timestamp extraction and severity classification |
+| `correlation_engine.py` | Transaction correlation and event timelines |
+| `screenshots/` | Application screenshots |
+| `sample_logs/` | Sample payment application logs |
+| `tests/` | Automated unit tests |
+| `requirements.txt` | Python project dependencies |
+| `README.md` | Project documentation |
+| `.env.example` | Environment variable configuration template |
+| `.gitignore` | Excludes sensitive and unnecessary files |
+| `PineLabs_Incident_Analyzer/.streamlit/config.toml` | Streamlit application configuration |
+---
 
-⸻
+## 🔐 7. Security
 
-🔐 Security
+The application follows basic security and configuration management practices.
 
-The actual .env file, API credentials, and Python virtual environment are local development files.
+* The actual .env file is maintained locally.
+* API credentials are stored using environment variables.
+* .env.example contains placeholder configuration values only.
+* .gitignore excludes sensitive and unnecessary development files.
+* API credentials must never be committed to GitHub.
+* API keys must not be exposed in screenshots, documentation, or public repositories.
+* Python virtual environments should not be included in the submission ZIP.
 
-They must never be committed to the public GitHub repository or included in the submission ZIP.
+The application uses optional external AI integration. Core rule-based functionality remains available when the Gemini API is unavailable.
 
-The .env.example file contains placeholder configuration values only.
+---
 
-⸻
+## 🖥️ 8. Application Screenshots
 
-🖥️ 7. Application Screenshots
+PayGuard AI provides an interactive Streamlit dashboard for application incident investigation, log analysis, AI-assisted troubleshooting, and incident reporting.
 
-PayGuard AI provides an interactive Streamlit dashboard for payment incident investigation, log analysis, AI-assisted troubleshooting, and incident reporting.
+8.1 Incident Monitoring Dashboard
 
-7.1 Incident Monitoring Dashboard
+The main dashboard provides log ingestion, sample log loading, incident analysis, severity classification, and access to the rule-based and AI analysis engines.
 
-The main dashboard provides log ingestion, sample log loading, incident analysis, and access to the rule-based and AI analysis engines.
+8.2 Application Welcome Dashboard
 
-7.2 Application Welcome Dashboard
+The welcome section displays application status, rule engine availability, Gemini AI connection status, and the incident monitoring workspace.
 
-The welcome section displays the application status, rule engine availability, Gemini AI connection status, and incident monitoring workspace.
+---
 
-⸻
-
-⚙️ 8. Installation and Setup
+## ⚙️ 9. Installation and Setup
 
 Prerequisites
 
@@ -320,7 +343,7 @@ cd PayGuard-AI
 
 Step 2: Create a Virtual Environment
 
-macOS/Linux
+macOS / Linux
 
 python3 -m venv venv
 
@@ -330,7 +353,7 @@ python -m venv venv
 
 Step 3: Activate the Environment
 
-macOS/Linux
+macOS / Linux
 
 source venv/bin/activate
 
@@ -342,28 +365,30 @@ Step 4: Install Dependencies
 
 pip install -r requirements.txt
 
-⸻
+---
 
-🤖 9. Gemini API Configuration
+## 🤖 10. Gemini API Configuration
 
-PayGuard AI supports optional Gemini AI integration.
+PayGuard AI supports optional Google Gemini API integration.
 
-Create a .env file in the project root directory.
-
-Add the following configuration:
+Create a .env file in the project root directory and add:
 
 GEMINI_API_KEY=your_api_key_here
 GEMINI_MODEL=gemini-3.5-flash-lite
 
-Replace the placeholder with your own Gemini API key.
+Replace the placeholder with your Gemini API key.
 
-Important: Never commit your actual API key to GitHub or share it in screenshots, documentation, or public repositories.
+Security Notes:
 
-If Gemini is not configured or unavailable, rule-based incident analysis remains available.
+* Never upload your API key to GitHub.
+* Keep .env in .gitignore.
+* Use .env.example for sample configuration.
 
-⸻
+If Gemini is unavailable, rule-based incident analysis continues to work.
 
-▶️ 10. Running the Application
+---
+
+## ▶️ 11. Running the Application
 
 Start the Streamlit application:
 
@@ -389,12 +414,15 @@ Application Workflow
 8. Review optional Gemini AI analysis.
 9. Download the JSON or TXT incident report.
 
-⸻
+---
 
-🧪 11. Sample Input
+## 🧪 12. Sample Input
 
-The following payment logs can be used to test the application.
+The following sample payment application logs can be used to test PayGuard AI's log processing, incident detection, severity classification, and troubleshooting capabilities.
 
+### Sample Payment Application Logs
+
+```text
 2026-11-18 10:00:01 INFO Payment service started
 2026-11-18 10:00:05 INFO Processing payment ID 1001
 2026-11-18 10:00:08 ERROR Payment API timeout
@@ -402,16 +430,43 @@ The following payment logs can be used to test the application.
 2026-11-18 10:00:12 CRITICAL Payment service unavailable
 2026-11-18 10:00:15 WARNING Retry limit approaching
 2026-11-18 10:00:20 INFO Monitoring system active
+```
 
-The application processes these entries to identify potential failures, classify severity, extract supporting evidence, and recommend investigation steps.
+### Expected Analysis
 
-⸻
+The application processes the supplied logs to identify potential failures and generate structured incident information.
 
-✅ 12. Testing
+| Log Entry | Detected Information |
+|---|---|
+| Payment service started | Service initialization |
+| Processing payment ID 1001 | Payment transaction activity |
+| Payment API timeout | API communication failure |
+| Database connection failed | Database connectivity issue |
+| Payment service unavailable | Critical service failure |
+| Retry limit approaching | Potential retry exhaustion |
+| Monitoring system active | Monitoring activity |
+
+### Analysis Output
+
+PayGuard AI uses the supplied log entries to:
+
+- Identify errors, warnings, and critical events.
+- Classify incident severity using predefined rules.
+- Identify potential failure patterns.
+- Extract supporting evidence from original logs.
+- Correlate related transaction and service events.
+- Generate troubleshooting recommendations.
+- Provide optional Gemini AI-assisted analysis.
+- Generate downloadable JSON and TXT incident reports.
+
+**Note:** The analysis results depend on the application's implemented detection rules and available log evidence. Potential root causes require verification by an engineer.
+---
+
+## ✅ 13. Testing
 
 The project includes automated tests using Python’s unittest framework.
 
-Run the test suite:
+Run the Test Suite
 
 python3 -m unittest discover -s tests -v
 
@@ -432,13 +487,13 @@ The current test suite contains 11 test cases covering:
 
 Test Results
 
-Development test run: 11 tests passed.
+Development Test Run: 11 Tests Passed.
 
 Gemini API integration was also tested separately. The automated unit tests primarily validate the rule-based components.
 
-⸻
+---
 
-💡 13. Skills Demonstrated
+## 💡 14. Skills Demonstrated
 
 This project demonstrates practical experience in the following areas.
 
@@ -485,9 +540,9 @@ Technology Operations
 * Escalation guidance.
 * Incident reporting.
 
-⸻
+---
 
-📚 14. Learning Outcomes
+## 📚 15. Learning Outcomes
 
 Through this project, I gained practical experience in:
 
@@ -496,7 +551,7 @@ Through this project, I gained practical experience in:
 3. Designing rule-based classification logic.
 4. Identifying potential application failure patterns.
 5. Correlating related events using transaction references.
-6. Integrating an external generative AI API.
+6. Integrating an external Generative AI API.
 7. Developing an interactive dashboard using Streamlit.
 8. Implementing automated tests using Python unittest.
 9. Managing project dependencies and environment variables.
@@ -504,9 +559,9 @@ Through this project, I gained practical experience in:
 
 These concepts are relevant to software development, backend engineering, application support, technology operations, and AI-assisted automation.
 
-⸻
+---
 
-⚠️ 15. Assumptions and Limitations
+## ⚠️ 16. Assumptions and Limitations
 
 Assumptions
 
@@ -524,13 +579,14 @@ Limitations
 * Missing transaction identifiers limit event correlation.
 * Gemini may generate incorrect or unsupported hypotheses.
 * AI analysis depends on API availability and usage quotas.
-* The application does not connect to live payment infrastructure.
+* The application does not connect to live production infrastructure.
 * The application does not automatically execute remediation actions.
 * Severity classification is rule-based and does not independently measure actual business impact.
+* Additional parsing and detection rules are required to support different application domains.
 
-⸻
+---
 
-🔮 16. Future Improvements
+## 🔮 17. Future Improvements
 
 Potential enhancements include:
 
@@ -543,12 +599,14 @@ Potential enhancements include:
 * Role-based access control.
 * Integration with ITSM platforms.
 * Automated incident workflow management.
+* Real-time log ingestion.
+* Domain-specific incident detection.
 
-⸻
+---
 
-🎓 17. Career and Technical Relevance
+## 🎓 18. Career and Technical Relevance
 
-PayGuard AI is a practical project demonstrating concepts that are useful across several technical career paths.
+PayGuard AI demonstrates practical concepts relevant to several technical career paths.
 
 Career Area	Relevant Project Concepts
 Python Developer	Python programming, modular development and data processing
@@ -557,29 +615,34 @@ Java Developer	Incident analysis concepts, service failures and backend troubles
 Data Engineer	Log processing, data extraction and transformation
 Technical Support Engineer	Error investigation, evidence analysis and troubleshooting
 Technology Operations	Incident classification, escalation and reporting
+DevOps Engineer	Application monitoring concepts and incident investigation
 AI Application Developer	Gemini API integration and AI-assisted analysis
 
-The project can also support technical preparation for CDAC by providing practical exposure to programming, data structures and problem-solving, software architecture, API integration, and testing concepts.
+The project also provides practical exposure to programming, software architecture, API integration, problem-solving, and automated testing.
 
-⸻
+---
 
-👨‍💻 18. Author
+## 👨‍💻 19. Author
 
 Kartik Mathpati
 
 B.Tech – Computer Engineering
+
+Pune, India
 
 Connect
 
 * GitHub Profile: Kartik2473
 * Project Repository: PayGuard AI
 
-⸻
+---
 
-📌 Final Note
+## 📌 Final Note
 
-PayGuard AI demonstrates how Python-based log processing, rule-based incident classification, event correlation, and generative AI can be combined to support payment technology operations.
+PayGuard AI demonstrates how Python-based log processing, rule-based incident classification, event correlation, and Generative AI can be combined to support software troubleshooting and technology operations.
 
 The project focuses on building a practical incident investigation tool that helps engineers understand application failures, review supporting evidence, identify potential causes, and prioritize troubleshooting activities.
 
 It is a prototype intended for learning, demonstration, and further development. It is not a production payment monitoring or automated remediation platform.
+
+Built with Python, Streamlit, and Google Gemini API.
